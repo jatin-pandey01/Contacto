@@ -8,8 +8,12 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use(express.urlencoded());
-
 app.use(cookieParser());
+
+import userRoute from "./routes/user.routes.js";
+import contactRoute from './routes/contact.route.js';
+
+app.use("/api/v1/auth",userRoute);
+app.use("/api/v1/contact",contactRoute);
 
 export default app;

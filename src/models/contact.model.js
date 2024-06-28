@@ -1,4 +1,4 @@
-import mongoose,{Schema,model} from "mongoose";
+import mongoose,{Schema,model, trusted} from "mongoose";
 
 const contactSchema = new Schema(
   {
@@ -10,6 +10,18 @@ const contactSchema = new Schema(
     number:{
       type:String,
       required:true
+    },
+    email:{
+      type:String,
+      trim:trusted
+    },
+    linkedin:{
+      type:String,
+      trim:trusted
+    },
+    twitter:{
+      type:String,
+      trim:trusted
     },
     owner:{
       type:mongoose.Types.ObjectId,
